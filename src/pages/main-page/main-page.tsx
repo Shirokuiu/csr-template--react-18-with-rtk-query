@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import CenterLayout from 'src/components/layouts/center-layout/center-layout';
 import PageLayout from 'src/components/layouts/page-layout/page-layout';
+import { PageRoutes } from '../../constants/routes';
 
 function MainPage() {
   return (
@@ -21,16 +22,21 @@ function MainPage() {
           <h1>Руководство</h1>
           <ul>
             <li>
-              <Link to="form-modal-svg-icons-example">Пример с формой и модалкой</Link>
+              <Link to={PageRoutes.ReduxExamplePage}>Пример с redux</Link>
             </li>
             <li>
-              <Link to="redux-example-page">Пример с redux</Link>
+              <Link to={PageRoutes.FontsExamplePage}>Пример с шрифтами</Link>
             </li>
             <li>
-              <Link to="fonts-example-page">Пример с шрифтами</Link>
+              <Link to={PageRoutes.SvgIconsExamplePage}>Пример с svg иконками</Link>
             </li>
             <li>
-              <Link to="data-fetch-by-rtk-query-example-page">Пример работы с api (rtk-query)</Link>
+              <Link to={PageRoutes.DataFetchByRtkQueryExamplePage}>
+                Пример работы с api (rtk-query)
+              </Link>
+            </li>
+            <li>
+              <Link to={PageRoutes.ModalExamplePage}>Пример работы модалки</Link>
             </li>
           </ul>
         </CenterLayout>
