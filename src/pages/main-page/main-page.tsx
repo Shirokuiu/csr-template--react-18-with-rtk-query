@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import CenterLayout from 'src/components/layouts/center-layout/center-layout';
 import PageLayout from 'src/components/layouts/page-layout/page-layout';
-import { PageRoutes } from '../../../constants/routes';
+import { PageRoutes } from '../../constants/routes';
 
 function MainPage() {
   return (
