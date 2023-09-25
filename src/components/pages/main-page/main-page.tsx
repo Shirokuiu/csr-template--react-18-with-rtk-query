@@ -35,6 +35,9 @@ function MainPage() {
                 Пример работы с api (rtk-query)
               </Link>
             </li>
+            <li>
+              <Link to={PageRoutes.ModalExamplePage}>Пример работы модалки</Link>
+            </li>
           </ul>
         </CenterLayout>
       </PageLayout>

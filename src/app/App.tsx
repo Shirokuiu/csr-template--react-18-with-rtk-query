@@ -22,6 +22,10 @@ const SvgIconsExamplePage = lazy(
   () => import('src/components/pages/svg-example-page/svg-icons-example-page'),
 );
 
+const ModalExamplePage = lazy(
+  () => import('src/components/pages/modal-example-page/modal-example-page'),
+);
+
 function App() {
   return (
     <>
@@ -57,6 +61,14 @@ function App() {
             element={
               <Suspense fallback={<>...</>}>
                 <DataFetchByRtkQueryExamplePage />
+              </Suspense>
+            }
+          />
+          <Route
+            path={PageRoutes.ModalExamplePage}
+            element={
+              <Suspense fallback={<>...</>}>
+                <ModalExamplePage />
               </Suspense>
             }
           />
