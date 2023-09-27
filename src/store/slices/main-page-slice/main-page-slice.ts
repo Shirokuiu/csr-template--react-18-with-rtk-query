@@ -17,4 +17,4 @@ export const mainPageSlice = createSlice({
   },
 });
 
-export const { actions: mainPageSliceActions } = mainPageSlice;
+export const { clearState } = mainPageSlice.actions;

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import CenterLayout from 'src/components/layouts/center-layout/center-layout';
 import PageLayout from 'src/components/layouts/page-layout/page-layout';
 import { useAppDispatch, useAppSelector } from 'src/hooks';
-import { mainPageSliceActions } from 'src/store/slices/main-page-slice/main-page-slice';
+import { clearState } from 'src/store/slices/main-page-slice/main-page-slice';
 import { getTitle } from 'src/store/slices/main-page-slice/selectors';
 
 function ReduxExamplePage() {
@@ -11,7 +11,7 @@ function ReduxExamplePage() {
   const dispatch = useAppDispatch();
 
   const handleButtonClick = () => {
-    dispatch(mainPageSliceActions.clearState());
+    dispatch(clearState());
   };
 
   return (
