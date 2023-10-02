@@ -52,6 +52,7 @@
     "react/button-has-type": "off",
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "no-param-reassign": 0,
+    "react/require-default-props": "off",
     "jsx-a11y/label-has-associated-control": ["error", {
       "required": {
         "some": ["nesting", "id"]
