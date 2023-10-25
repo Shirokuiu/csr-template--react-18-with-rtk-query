@@ -26,7 +26,7 @@
     ]
   },
   "dependencies": {
-    "antd": "5.9.3",
+    "antd": "5.10.2",
     "normalize.css": "8.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -34,8 +34,8 @@
     "react-helmet-async": "1.3.0",
     "react-redux": "8.1.3",
     "react-router-dom": "6.17.0",
-    "react-scripts": "5.0.0",
-    "reselect": "4.1.5"
+    "react-scripts": "5.0.1",
+    "reselect": "4.1.8"
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "3.4.2",
