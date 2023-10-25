@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { PageLayoutProps } from 'src/components/layouts/page-layout/types';
+import { PageLayoutProps } from 'src/layouts/page-layout/types';
+
 import './page-layout.scss';
 
 function PageLayout({ children, className = '', renderFooter = () => null }: PageLayoutProps) {
