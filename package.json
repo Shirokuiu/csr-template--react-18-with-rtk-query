@@ -67,10 +67,10 @@
     "postcss": "8.4.31",
     "prettier": "2.6.2",
     "sass": "1.69.4",
-    "stylelint": "15.11.0",
+    "stylelint": "13.6.1",
     "stylelint-declaration-use-variable": "1.7.3",
-    "stylelint-order": "6.0.3",
-    "stylelint-scss": "5.2.1",
+    "stylelint-order": "5.0.0",
+    "stylelint-scss": "4.2.0",
     "svg2sprite-cli": "2.0.1",
     "typescript": "5.2.2"
   },
