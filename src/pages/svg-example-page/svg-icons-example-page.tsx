@@ -1,9 +1,9 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 
-import PageLayout from '../../components/layouts/page-layout/page-layout';
-import SvgSpriteIcon from '../../components/shared/svg-sprite-icon/svg-sprite-icon';
-import { SvgSpriteIconId } from '../../components/shared/svg-sprite-icon/types';
+import PageLayout from '../../layouts/page-layout/page-layout';
+import SvgSpriteIcon from '../../shared/components/svg-sprite-icon/svg-sprite-icon';
+import { SvgSpriteIconId } from '../../shared/components/svg-sprite-icon/types';
 
 function SvgIconsExamplePage() {
   return (
