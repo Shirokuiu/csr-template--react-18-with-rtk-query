@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 
-import { useAppDispatch, useAppSelector } from 'src/hooks';
-import CenterLayout from 'src/layouts/center-layout/center-layout';
-import PageLayout from 'src/layouts/page-layout/page-layout';
+import { useAppDispatch, useAppSelector } from 'src/shared/hooks';
+import CenterLayout from 'src/shared/layouts/center-layout/center-layout';
+import PageLayout from 'src/shared/layouts/page-layout/page-layout';
 import { mainPageSliceActions } from 'src/store/slices/main-page-slice/main-page-slice';
 import { getTitle } from 'src/store/slices/main-page-slice/selectors';
 

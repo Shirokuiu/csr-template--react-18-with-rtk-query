@@ -1,4 +1,4 @@
-import { PropsWithCssClassName } from 'src/types/shared';
+import { PropsWithCssClassName } from 'src/shared/types/shared';
 
 export type SvgSpriteIconProps = PropsWithCssClassName<{
   id: SvgSpriteIconId;
