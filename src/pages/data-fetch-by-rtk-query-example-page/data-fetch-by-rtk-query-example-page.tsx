@@ -1,12 +1,12 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 
-import CenterLayout from 'src/layouts/center-layout/center-layout';
-import PageLayout from 'src/layouts/page-layout/page-layout';
 import {
   useGetPokemonByNameQuery,
   useLazyLoadAllPokemonsQuery,
 } from 'src/services/pokemon-api/pokemon-api';
+import CenterLayout from 'src/shared/layouts/center-layout/center-layout';
+import PageLayout from 'src/shared/layouts/page-layout/page-layout';
 
 function DataFetchByRtkQueryExamplePage() {
   const { data, isLoading } = useGetPokemonByNameQuery('bulbasaur');

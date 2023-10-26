@@ -1,9 +1,9 @@
-import React, { Suspense, lazy } from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import { PageRoutes } from 'src/constants/routes';
-import WrappedSvgSprite from 'src/hocks/wrapped-svg-sprite/wrapped-svg-sprite';
 import MainPage from 'src/pages/main-page/main-page';
+import { PageRoutes } from 'src/shared/constants/routes';
+import WrappedSvgSprite from 'src/shared/hocks/wrapped-svg-sprite/wrapped-svg-sprite';
 
 const ReduxExamplePage = lazy(() => import('src/pages/redux-example-page/redux-example-page'));
 const FontsExamplePage = lazy(() => import('src/pages/fonts-example-page/fonts-example-page'));
