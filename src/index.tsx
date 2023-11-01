@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import App from 'src/app/App';
 import { store } from 'src/store';
+
 import 'src/assets/styles/index.scss';
 
 const container = document.getElementById('root') as HTMLElement;
