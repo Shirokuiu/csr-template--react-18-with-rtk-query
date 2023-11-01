@@ -68,8 +68,8 @@
     "sass": "1.69.4",
     "stylelint": "13.13.0",
     "stylelint-declaration-use-variable": "1.7.3",
-    "stylelint-order": "5.0.0",
-    "stylelint-scss": "4.2.0",
+    "stylelint-order": "4.1.0",
+    "stylelint-scss": "3.21.0",
     "svg2sprite-cli": "2.0.1",
     "typescript": "5.2.2"
   },
