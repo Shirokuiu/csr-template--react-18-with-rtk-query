@@ -96,23 +96,23 @@
 
    Неправильно:
 
-     ```javascript
-     const EARTH_GRAVITY = 9.8;
-     const EARTH_RADIUS = 6370;
-     ```
+   ```javascript
+   const EARTH_GRAVITY = 9.8;
+   const EARTH_RADIUS = 6370;
+   ```
    Правильно:
 
-     ```javascript
-     const enum Earth {
-       Gravity = 9.8,
-       Radius = 6370,
-     }
+   ```javascript
+   const enum Earth {
+     Gravity = 9.8,
+     Radius = 6370,
+   }
 
-     const AnotherEarth = {
-       Gravity: 9.8,
-       Radius: 6370,
-     } as const;
-     ```
+   const AnotherEarth = {
+     Gravity: 9.8,
+     Radius: 6370,
+   } as const;
+   ```
 10. В коде не используются «магические значения», под каждое из них заведена отдельная переменная, названная как константа
 
     Неправильно:
