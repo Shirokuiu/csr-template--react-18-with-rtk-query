@@ -5,7 +5,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
-import App from 'src/app/App';
+import App from 'src/app/app';
 import { api } from 'src/services/api';
 import { SliceNameSpace } from 'src/store/constants';
 

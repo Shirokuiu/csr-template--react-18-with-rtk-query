@@ -1,4 +1,6 @@
-import { ReactComponent as GeneratedSvgSprite } from 'src/assets/sprites/_sprite.svg';
+/// <reference types="vite-plugin-svgr/client" />
+import GeneratedSvgSprite from 'src/assets/sprites/_sprite.svg?react';
+
 import './svg-sprite.scss';
 
 function SvgSprite() {
