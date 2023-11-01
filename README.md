@@ -1,46 +1,196 @@
-# Getting Started with Create React App (support - typescript, eslint, react router v6, redux, axios, reselect, prettier, husky, lint-staged, sass, stylelint, normalize.css)
+## Файловая система
+```
+└── src/                            # Основная папка для разработки
+    └── assets/                     # Папка для статики
+        ├── fonts/                  # Папка со шрифтами
+        ├── icons/                  # Папка c svg иконками, с которых будет сгенерирован svg спрайт командой - generate:svg-sprite
+        ├── img/                    # Папка со статичными картинками (svg, jpeg, png и тп)
+        └── sprites/                # Папка с сгенерированным svg спрайтом
+            └── _sprite.svg         # Файл сгенерированного svg спрайта
+        └── styles/                 # Папка с глобальными стилями
+            ├── colors.scss         # Файл, для регистрации перерменных цвета
+            ├── global.scss         # Файл с глобальными стилями
+            ├── index.scss          # Файл с точкой входа
+            ├── mixins.scss         # Файл с глобальными миксинами
+            ├── sizes.scss          # Файл с переменными для адаптива
+            └── typography.scss     # Файл для типографики
+    └── modules/                    # Папка для всех модулей приложения
+    └── pages/                      # Папка для всех страниц приложения
+    └── services/                   # Папка для работы с api и сервисами приложения
+        ├── api.ts                  # Файл с регистрацией api rtk-query
+        ├── constants.ts            # Файл с общими константами для всех api и сервисов
+        ├── error-interceptor.ts    # Файл с интерцептором ошибок api
+    └── shared/                     # Папка для общих компонентов и утилитарных функций приложения
+        └── components/             # Папка для общих компонентов приложения
+        └── constants/              # Папка для общих констант приложения
+        └── hocks/                  # Папка для общих хоков приложения
+        └── hooks/                  # Папка для общих хуков приложения
+      └── layouts/                  # Папка для общих лейаутов приложения
+        └── layouts/                # Папка для общих типов приложения
+    └── store/                      # Папка для работы с глобальных состоянием приложения
+        └── slices/                 # Папка для слайсов (разными сущностями глобального состояния)
+        └── types/                  # Папка для типов глобального состояния
+        ├── constants.ts            # Файл для общих констант глобального состояния
+        ├── index.ts                # Файл для инициализации глобального состояния
+        ├── root-reducer.ts         # Файл для регистрации слайсов глобального состояния
+```
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Критерии написания кода
+1. Названия констант (постоянных значений) написаны прописными (заглавными) буквами
+2. Перечисления (Enum) начинаются с прописной (заглавной) буквы.
 
-## Available Scripts
+  - Перечисления названы существительными в единственном числе. Для объявления перечислений используется ключевое слово enum. Вместо перечислений допускается использование константных объектов (as const)
 
-In the project directory, you can run:
+   Неправильно:
 
-### `npm start`
+   ```javascript
+   // Обычный объект
+    const view = {
+      ARTIST: 'Artist',
+      GENRE: 'Genre',
+    }
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+    // Имя значения начинается
+    // со строчной буквы
+    const enum EndGameType {
+      lives = 'lives',
+      quests = 'quests',
+    }
+   ```
+   Правильно:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+   ```javascript
+   const enum View {
+     Artist = 'Artist',
+     Genre = 'Genre',
+   }
 
-### `npm test`
+   const EndGameType = {
+     Lives: 'lives',
+     Quest: 'quests',
+   } as const;
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Для работы с адресной строкой используется React Router и только он
+4. Для хранения глобального состояния используется redux-toolkit и только он
+5. Все TS и TSX файлы хранятся в папке src
+6. Название файла совпадает с названием экспортируемого модуля. В названии файлов не используется разный регистр, а применяется разделение слов дефисом
 
-### `npm run build`
+   Неправильно:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+     ```javascript
+     Button.tsx
+     RedButton.tsx
+     ```
+   Правильно:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+     ```javascript
+     button.tsx
+     red-button.tsx
+     ```
+7. Главный файл в каждой директории, называется так же, как директория
+8. Обработчики событий названы через `handle`
+9. Составные константы собираются в перечисления (Enum) или константный объект
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  - Множества однотипных констант собираются в перечисления или константный объект.
 
-### `npm run eject`
+   Неправильно:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+     ```javascript
+     const EARTH_GRAVITY = 9.8;
+     const EARTH_RADIUS = 6370;
+     ```
+   Правильно:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+     ```javascript
+     const enum Earth {
+       Gravity = 9.8,
+       Radius = 6370,
+     }
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+     const AnotherEarth = {
+       Gravity: 9.8,
+       Radius: 6370,
+     } as const;
+     ```
+10. В коде не используются «магические значения», под каждое из них заведена отдельная переменная, названная как константа
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    Неправильно:
 
-## Learn More
+     ```javascript
+     const getItems = (filterName) => {
+       switch (filterName) {
+         case 'all':
+           return [];
+         case 'new':
+           return [];
+         default:
+           return [];
+       }
+     };
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+     getItems('all');
+     ```
+    Правильно:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+      ```javascript
+      const enum Filter {
+        All = 'all',
+        New = 'new',
+      }
+
+      const getItems = (filterName) => {
+        switch (filterName) {
+          case Filter.All:
+            return [];
+          case Filter.New:
+            return [];
+          default:
+            return [];
+        }
+      };
+
+      getItems(Filter.All);
+      ```
+11. Functional component first. Другие виды компонентов применяются только, если задача не может быть решена функциональным компонентом или решение становится чрезмерно сложным
+12. Структура каждого TSX-файла
+
+  - Импорты
+  - Описание типа компонента (props)
+  - Код компонента
+  - Экспорты
+
+    Блоки кода не описанные в этой структуре могут быть расположены произвольно
+13. Колбэки, переданные в `props` названы через `on`
+14. Служебный `prop` `key`  должен содержать только уникальные значения. Запрещается использовать в качестве такого значения индекс элемента в массиве
+15. Все дополнительные ресурсы компонента (например, стили) размещаются в директории с компонентом или модулем
+16. Редьюсер не должен содержать побочных эффектов. Функция-редьюсер опирается только на `state`, `action` и чистые функции
+17. Логика изменения состояния описывается в редьюсере, а не в компоненте
+18. Отсутствует «универсальный редьюсер». Редьюсеры разбиваются в соответствии с предметной областью и объединяются при помощи Combine Reducer
+19. Для чтения состояния из хранилища применяются селекторы. Если требуется модифицировать результат при чтении (например, отфильтровать), нужно применить мемоизацию (пакет reselect).
+20. Для именования типов действия (action type) применяется паттерн: `домен/действие` (something/action). Например: `list/addFavorite`, `user/login` и так далее
+21. Hooks применяются только на верхнем уровне. Нельзя использовать хуки во вложенных блоках кода: циклах, условиях и так далее
+22. Hooks вызываются только из React-компонент. Обычные функции не должны обращаться к хукам
+23. Кастомные Hooks начинаются с префикса `use<HookName>`. Например: `useUser`
+24. Тестовые файлы лежат рядом с файлами, для которых написан тест
+25. Все тесты используют в названии `*.test.ts`
+26. Тесты разного вида написаны в разных файлах
+27. Во всех видах тестовых файлов используются моковые данные для инициализации компонентов
+28. Адрес для ипмпортов указан абсолютным, а не относительным. Исключение - файл index.ts, который группирует импорты
+
+    Неправильно:
+
+     ```javascript
+     import Button from '../../shared/components/button'
+     ```
+    Правильно:
+
+     ```javascript
+     import Button from 'src/shared/components/button'
+    ```
+## Архитектура
+
+1. Приложения разбивается на страницы (pages) => модули (modules) => компоненты (components).
+2. Страница - подключает все нужные модули и компоненты, которые должны сформировать ее вид. Также страница может инициализировать начальное стостояние стора, делать запросы на бэк.
+3. Модуль - может подключаться к стору, может делать запросы на бэк, подключать другие модули. Может иметь как свои компоненты, так и компоненты из папки shared. Модуль рассматривается как отдельный, самодостаточный, логически завершенный участок приложения. Проще всего модуль представить как отдельный БЭМ блок. Модуль стоит разрабатывать так, чтобы в любой промежуток времени его можно было укомплектовать в отдельную библиотеку, или вставить в другую часть приложения при этом не поломав само приложение.
+4. Компонент - не может подключаться к стору, не может делать запросы к бэку, может подключать другие компоненты. Задача компонента быть чистым. Компонент работает только с пропсами, колбэками и внутренним состоянием. Допускается общение компонентов на 1 уровне, если компонентам нужны пропсы глубже, то проброс в глубокие части дерева компонентов прокидывается с помощью compositionApi, либо c помощью contexApi модуля, в котором лежат эти компоненты.
