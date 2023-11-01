@@ -6,8 +6,7 @@
     "start": "vite",
     "build": "tsc && vite build",
     "generate:svg-sprite": "svg2sprite ./src/assets/icons ./src/assets/sprites/_sprite.svg --stripAttrs id",
-    "test": "react-scripts test --watchAll=false",
-    "eject": "react-scripts eject",
+    "test": "vitest",
     "lint": "eslint --ext .tsx --ext .ts src/",
     "lint:style": "stylelint --fix \"src/**/*.scss\" --syntax=scss -q",
     "prettier": "npx prettier --write .",
@@ -62,6 +61,7 @@
     "eslint-plugin-react": "7.33.2",
     "eslint-plugin-react-hooks": "4.6.0",
     "husky": "8.0.3",
+    "jsdom": "22.1.0",
     "lint-staged": "15.0.2",
     "postcss": "8.4.31",
     "prettier": "2.6.2",
@@ -74,7 +74,8 @@
     "typescript": "5.2.2",
     "vite": "4.5.0",
     "vite-plugin-svgr": "4.1.0",
-    "vite-tsconfig-paths": "4.2.1"
+    "vite-tsconfig-paths": "4.2.1",
+    "vitest": "0.34.6"
   },
   "lint-staged": {
     "*.{tsx,ts}": "eslint --fix",
