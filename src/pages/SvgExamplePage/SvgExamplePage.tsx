@@ -1,11 +1,10 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
+import PageLayout from 'src/shared/layouts/PageLayout/PageLayout';
+import SvgSpriteIcon from 'src/shared/components/SvgSpriteIcon/SvgSpriteIcon';
+import { SvgSpriteIconId } from 'src/shared/components/SvgSpriteIcon/types';
 
-import SvgSpriteIcon from '../../shared/components/svg-sprite-icon/svg-sprite-icon';
-import { SvgSpriteIconId } from '../../shared/components/svg-sprite-icon/types';
-import PageLayout from '../../shared/layouts/page-layout/page-layout';
-
-function SvgIconsExamplePage() {
+function SvgExamplePage() {
   return (
     <HelmetProvider>
       <Helmet>
@@ -34,4 +33,4 @@ function SvgIconsExamplePage() {
   );
 }
 
-export default SvgIconsExamplePage;
+export default SvgExamplePage;

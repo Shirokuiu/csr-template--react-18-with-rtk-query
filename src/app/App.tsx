@@ -1,20 +1,19 @@
 import React, { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import MainPage from 'src/pages/main-page/main-page';
+import MainPage from 'src/pages/MainPage/MainPage';
 import { PageRoutes } from 'src/shared/constants/routes';
-import WrappedSvgSprite from 'src/shared/hocks/wrapped-svg-sprite/wrapped-svg-sprite';
+import WrappedSvgSprite from 'src/shared/hocks/WrappedSvgSprite/WrappedSvgSprite';
 
-const ReduxExamplePage = lazy(() => import('src/pages/redux-example-page/redux-example-page'));
-const FontsExamplePage = lazy(() => import('src/pages/fonts-example-page/fonts-example-page'));
+const ReduxExamplePage = lazy(() => import('src/pages/ReduxExamplePage/ReduxExamplePage'));
+const FontsExamplePage = lazy(() => import('src/pages/FontsExamplePage/FontsExamplePage'));
 const DataFetchByRtkQueryExamplePage = lazy(
-  () =>
-    import('src/pages/data-fetch-by-rtk-query-example-page/data-fetch-by-rtk-query-example-page'),
+  () => import('src/pages/DataFetchByRtkQueryExamplePage/DataFetchByRtkQueryExamplePage'),
 );
 
-const SvgIconsExamplePage = lazy(() => import('src/pages/svg-example-page/svg-icons-example-page'));
+const SvgIconsExamplePage = lazy(() => import('src/pages/SvgExamplePage/SvgExamplePage'));
 
-const ModalExamplePage = lazy(() => import('src/pages/modal-example-page/modal-example-page'));
+const ModalExamplePage = lazy(() => import('src/pages/ModalExamplePage/ModalExamplePage'));
 
 function App() {
   return (

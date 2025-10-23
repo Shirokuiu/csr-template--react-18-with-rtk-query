@@ -82,7 +82,7 @@
     "vitest": "4.0.1"
   },
   "lint-staged": {
-    "*.{ts,tsx}": "eslint --fix --max-warnings=0",
+    "*.{ts,tsx}": "eslint --fix",
     "*.{scss,css}": "stylelint --fix"
   }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { PageLayoutProps } from 'src/shared/layouts/page-layout/types';
+import { PageLayoutProps } from 'src/shared/layouts/PageLayout/types';
 
 import './page-layout.scss';
 
