@@ -5,7 +5,6 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 import importPlugin from 'eslint-plugin-import';
 import prettier from 'eslint-plugin-prettier';
-import globals from 'globals';
 
 export default tseslint.config(
   // Базовые пресеты
@@ -71,7 +70,7 @@ export default tseslint.config(
       'max-len': [
         'warn',
         {
-          code: 100,
+          code: 180,
           ignorePattern: '^import\\s.+\\sfrom\\s.+;$',
           ignoreUrls: true,
         },

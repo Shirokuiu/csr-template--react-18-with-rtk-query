@@ -1,13 +1,78 @@
 .page-layout {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100%;
+  position: relative;
+
+  &--full-height {
+    height: 100vh;
+
+    @supports (min-height: 100dvh) {
+      height: 100dvh;
+    }
+  }
+
+  &__spinner {
+    left: 50%;
+    position: fixed;
+    top: 50%;
+  }
+
+  &__header {
+    grid-row: 1;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
 
   &__content {
-    flex: 1 0 auto;
+    background-color: var(--theme-background-color-tertiary);
+    grid-row: 2;
+    overflow-y: auto;
+    padding-top: 10px;
+
+    &--clear-padding {
+      padding: 0;
+    }
+
+    &--is-loading {
+      opacity: 0.3;
+      pointer-events: none;
+    }
   }
 
   &__footer-wrap {
-    flex: 0 0 auto;
+    background-color: var(--theme-background-color-tertiary);
+    grid-row: 3;
+    padding-bottom: 20px;
+
+    &--clear-padding {
+      padding-bottom: 0;
+    }
+
+    &--is-loading {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+  }
+
+  &__footer-fixed {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+
+    &--ios {
+      background-color: var(--theme-body);
+      padding-bottom: 15px;
+    }
+  }
+
+  &__footer-fixed-placeholder {
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
   }
 }
