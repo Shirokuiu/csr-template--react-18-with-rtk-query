@@ -9,11 +9,11 @@ function MainPage() {
   return (
     <HelmetProvider>
       <PageLayout
-        renderFooter={() => (
+        footerSlot={
           <CenterLayout>
             <h2>Контент футера</h2>
           </CenterLayout>
-        )}
+        }
       >
         <Helmet>
           <title>Руководство</title>

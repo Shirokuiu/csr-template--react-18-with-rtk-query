@@ -3,7 +3,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
-import App from 'src/app/app';
+import App from 'src/app/App';
 import { SliceNameSpace } from 'src/store/constants';
 import { createMockStore } from 'src/testConfig';
 

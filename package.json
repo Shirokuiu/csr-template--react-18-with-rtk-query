@@ -35,7 +35,8 @@
     "react-redux": "9.2.0",
     "react-router-dom": "7.9.4",
     "redux": "5.0.1",
-    "reselect": "5.1.1"
+    "reselect": "5.1.1",
+    "ua-parser-js": "2.0.6"
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "4.1.1",
