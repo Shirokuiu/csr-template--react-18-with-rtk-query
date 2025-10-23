@@ -2,10 +2,10 @@ import { api } from 'src/services/api';
 
 const pokemonApi = api.injectEndpoints({
   endpoints: ({ query }) => ({
-    getPokemonByName: query<any, string>({
+    getPokemonByName: query<unknown, string>({
       query: (name: string) => `pokemon/${name}`,
     }),
-    loadAllPokemons: query<any, void>({
+    loadAllPokemons: query<unknown, void>({
       query: () => 'pokemon',
     }),
   }),

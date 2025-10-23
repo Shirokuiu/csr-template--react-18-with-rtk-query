@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 
 import { useAppDispatch, useAppSelector } from 'src/shared/hooks';
-import CenterLayout from 'src/shared/layouts/center-layout/center-layout';
-import PageLayout from 'src/shared/layouts/page-layout/page-layout';
-import { mainPageSliceActions } from 'src/store/slices/main-page-slice/main-page-slice';
-import { getTitle } from 'src/store/slices/main-page-slice/selectors';
+import CenterLayout from 'src/shared/layouts/CenterLayout/CenterLayout';
+import PageLayout from 'src/shared/layouts/PageLayout/PageLayout';
+import { mainPageSliceActions } from 'src/store/slices/mainPageSlice/mainPageSlice';
+import { getTitle } from 'src/store/slices/mainPageSlice/selectors';
 
 function ReduxExamplePage() {
   const title = useAppSelector(getTitle);

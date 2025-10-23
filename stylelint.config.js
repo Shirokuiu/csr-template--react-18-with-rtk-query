@@ -29,6 +29,12 @@ export default {
         ignorePseudoClasses: ['input-placeholder', 'moz-input-placeholder'],
       },
     ],
+    'property-no-deprecated': [
+      true,
+      {
+        ignoreProperties: ['clip'],
+      },
+    ],
   },
   ignoreFiles: ['**/*.js', '**/*.ts', '**/*.tsx', '**/*.svg', 'node_modules/**', 'dist/**'],
 };

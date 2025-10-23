@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 import {
   useGetPokemonByNameQuery,
   useLazyLoadAllPokemonsQuery,
-} from 'src/services/pokemon-api/pokemon-api';
-import CenterLayout from 'src/shared/layouts/center-layout/center-layout';
-import PageLayout from 'src/shared/layouts/page-layout/page-layout';
+} from 'src/services/pokemonApi/pokemonApi';
+import CenterLayout from 'src/shared/layouts/CenterLayout/CenterLayout';
+import PageLayout from 'src/shared/layouts/PageLayout/PageLayout';
 
 function DataFetchByRtkQueryExamplePage() {
   const { data, isLoading } = useGetPokemonByNameQuery('bulbasaur');
@@ -28,7 +28,7 @@ function DataFetchByRtkQueryExamplePage() {
             'Загрузка...'
           ) : (
             <>
-              <p>Имя покемона: {data?.name}</p>
+              <p>Имя покемона: {(data as { name: string })?.name}</p>
               <button type="button" onClick={handleLoadAllPokemons}>
                 Загрузить всех покемонов
               </button>

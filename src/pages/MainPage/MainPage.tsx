@@ -1,9 +1,9 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 
-import CenterLayout from 'src/shared/layouts/center-layout/center-layout';
-import PageLayout from 'src/shared/layouts/page-layout/page-layout';
-import { PageRoutes } from '../../shared/constants/routes';
+import CenterLayout from 'src/shared/layouts/CenterLayout/CenterLayout';
+import PageLayout from 'src/shared/layouts/PageLayout/PageLayout';
+import { PageRoutes } from 'src/shared/constants/routes';
 
 function MainPage() {
   return (
